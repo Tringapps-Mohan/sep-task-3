@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SEP-TASK-3</title>
+</head>
+
+<body>
+    <section class="input-area">
+        <div class="inputs-container" id="container">
+            <div class="box-container">
+                <input type="text" class="name text-box" value="S.Mohan"
+                    title="Name doesn't contains symbols e.g:!,#,$,@,%,^,.etc" placeholder="----Your Name----" />
+                <input type="text" class="age text-box" value="18" title="Enter a numeric value for age"
+                    placeholder="----Age----" />
+                <input type="text" class="mark text-box" value="100" title="Enter marks in number"
+                    placeholder="----Marks----" />
+                <div class="plusAndMinus">
+                    <input type="button" value="+" class="plus" onclick="addNewRecord()" />
+                    <input type="button" value="-" class="minus"
+                        onclick="deleteRecord(this.parentElement.parentElement)" />
+                </div>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button class="submit" onclick="showTable()">Submit</button>
+            <button class="cancel" onclick="clearAll()">Cancel</button>
+        </div>
+    </section>
+
+    <section class="table-area" id="table-area">
+        <div class="table-container">
+            <table class="data-table" frame="hside" rules="groups">
+                <thead>
+                    <th>Name <span onclick="sortStoredData('name')">asc</span><span
+                            onclick="sortStoredData('name',true)">desc</span></th>
+                    <th>Age <span onclick="sortStoredData('age')">asc</span><span
+                            onclick="sortStoredData('age',true)">desc</span></th>
+                    <th>Mark <span onclick="sortStoredData('mark')">asc</span><span
+                            onclick="sortStoredData('mark',true)">desc</span></th>
+                </thead>
+                <tbody class="data-table-body" id="data-table-body">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="page">
+            <button class="page-numbers" id="pre" onclick="pre(this)">&laquo;</button>
+            <div class="pagination" id="pagination">
+
+            </div>
+            <button class="page-numbers" id="next" onclick="next(this)">&raquo;</button>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
