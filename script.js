@@ -133,7 +133,7 @@ const fillTable = (noOfRecords, storedData, start = 0) => {
         tablePointer.push({ name: storedData[i]["name"], age: storedData[i]["age"], mark: storedData[i]["mark"] });
         data += `<tr><td>${storedData[i]["name"]}</td><td>${storedData[i]["age"]}</td><td>${storedData[i]["mark"]}</td></tr>`;
     }
-    console.log(tableBody);
+
     tableBody.innerHTML = data;
 };
 
@@ -165,7 +165,6 @@ getStoredData();
 if (storedData.length > 0) {
     showTable(true);
 }
-
 checkPreAndNextButtons();
 
 const pre = (element) => {
@@ -176,7 +175,7 @@ const pre = (element) => {
     }
     element.nextElementSibling.nextElementSibling.disabled = false;
     showPage(currentPage);
-    console.log(totalRecords, currentPage, (currentPage - 1) * 5);
+
 };
 
 const next = element => {
@@ -185,6 +184,6 @@ const next = element => {
     if ((currentPage) * 5 >= totalRecords)
         element.disabled = true;
     element.previousElementSibling.previousElementSibling.disabled = false;
-    console.log(totalRecords, currentPage);
+
     showPage(currentPage);
 };
